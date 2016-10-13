@@ -4,7 +4,7 @@
     return check;
 }
 
-function gotoMenu() { window.location.href = 'Menu.html'; }
+function gotoMenu() { window.location.href = 'index.html'; }
 function gotoAbout() { window.location.href = 'About.html'; }
 function gotoRecruiting() { window.location.href = 'Recruiting.html'; }
 function gotoTeam() { window.location.href = 'Team.html'; }
