@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Almost Harmless</title>
+    <link rel="icon" type="img/ico" href="favicon.ico">
+    <link href="Content/Site.css" rel="stylesheet" />
+    <style>
+        #pageAssets {
+            background-image: url('Content/Images/applyAsset.png');
+            background-size: 100%; }
+
+        @media(max-width: 800px) {
+            #pageAssets { background-position-y: 15%; }
+        }
+    </style>
+</head>
+<body>
+    <header onclick="gotoMenu()">
+        <div id="dLogo">
+            <img src="Content/Images/AH_Logo.png" height="100" />
+            <span id="dzfdze">Almost Harmless [AH]</span>
+        </div>
+    </header>
+
+    <section id="menuSmall" class="menu" style="position: absolute;">
+        <div id="mfAbout" class="col6 fullH" onclick="gotoAbout()"><div class="fullH"><p><span>What we do</span></p></div></div><!--
+        --><div id="mfRecruit" class="col6 fullH" onclick="gotoRecruiting()"><div class="fullH"><p><span>Who we're looking for</span></p></div></div><!--
+        --><div id="mfTeam" class="col6 fullH" onclick="gotoTeam()"><div class="fullH"><p><span>Our team</span></p></div></div><!--
+        --><div id="mfMedia" class="col6 fullH" onclick="gotoMedia()"><div class="fullH"><p><span>Raid media</span></p></div></div><!--
+        --><div id="mfForum" class="col6 fullH" onclick="gotoForum()"><div class="fullH"><p><span>Forum</span></p></div></div><!--
+        --><div id="mfApply" class="col6 fullH active" onclick="gotoApplication()"><div class="fullH"><p><span>Apply now</span></p></div></div>
+    </section>
+
+    <section id="contentContainer">
+        <div id="contentOverlay" style="display: none;"></div>
+        <div id="pageAssets" class="col2 pApply"></div><!--
+        --><div id="pageContent" class="col2" style="background-color: rgba(126, 30, 101, 1);">
+            <div id="pageContentContainer">
+                <div>
+                    <p class="pageTitle"><span>Apply</span></p>
+
+                    <div>
+                        <form>
+                            <div class="inputfield">
+                                <label for="accnName">GW2 Account Name</label>
+                                <input id="txtAccnName" name="accnName" type="text" placeholder="blah.1234" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="chrName">Main Character Name</label>
+                                <input id="txtChrName" name="chrName" type="text" placeholder="Leroy" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label>Main Character Class</label>
+                                <table id="tblMainClass" class="classTable">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="Content/Images/classIcons/warriorIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/guardianIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/revenantIcon.png" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="Content/Images/classIcons/RangerIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/thiefIicon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/engineerIcon.png" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="Content/Images/classIcons/NecromancerIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/elementalistIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/MesmerIcon.png" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="inputfield">
+                                <label>Other Classes Played</label>
+                                <table id="tblOtherClasses" class="classTable">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="Content/Images/classIcons/warriorIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/guardianIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/revenantIcon.png" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="Content/Images/classIcons/RangerIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/thiefIicon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/engineerIcon.png" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="Content/Images/classIcons/NecromancerIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/elementalistIcon.png" /></td>
+                                            <td><img src="Content/Images/classIcons/MesmerIcon.png" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="mainAge">Main Character Age</label>
+                                <input type="text" id="txtMainAge" name="mainAge" placeholder="type /age in game chat" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="wvwRank">GW2 WvW Rank</label>
+                                <input type="text" id="txtWvwRank" name="wvwRank" placeholder="1,363" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="wvwKills">How many WvW kills do you got?</label>
+                                <input type="text" id="txtWvKills" name="wvwKills" placeholder="Achievements -> Competitive -> World vs World" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="rlAge">Real-Life Age</label>
+                                <input type="text" id="txtRlAge" name="rlAge" placeholder="22" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="tsPeri">Are you vocal on Teamspeak?</label>
+                                <input type="text" id="txtTsPeri" name="tsPeri" placeholder="Using headset/Micro" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="tsNick">SFR Teamspeak Nickname</label>
+                                <input type="text" id="txtTsNick" name="tsNick" placeholder="Leroy" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="raidAttend">Can you attend to the raids on Sunday, Tuesday and Wednesday?</label>
+                                <input type="text" id="txtRaidAttend" name="raidAttend" placeholder="Yes" />
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="guildHist">Guild & Server History</label>
+                                <textarea name="guildHist" id="txaGuildHist" placeholder="BOO - SFR, VILE - Deso"></textarea>
+                            </div>
+
+                            <div class="inputfield">
+                                 <label for="gvgExp">What is your GvG/Scrim experience?</label>
+                                <textarea name="gvgExp" id="txaGvgExp" placeholder="None"></textarea>
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="buildInfo">Which Build and Gear setup are you using? Are you willing to change it if needed?</label>
+                                <textarea name="buildInfo" id="txaBuildInfo"></textarea>
+                            </div>
+
+                            <div class="inputfield">
+                                <label for="applyMotiv">Why do you want to join Almost Harmless - additional information, relevant to your application, you would like to share?</label>
+                                <textarea name="applyMotiv" id="txaApplyMotiv"></textarea>
+                            </div>
+
+                            <div class="inputfield">
+                                <input type="button" id="btnSubmit" value="Submit application" />
+                            </div>
+                        </form>
+                        <div style="height: 50px;" class="fillerDiv"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/Shared.js"></script>
+    <script>
+        function initBodySize() {
+            var menuFullBlockH = (window.innerHeight - 120);
+            $('#contentContainer > div').css('height', menuFullBlockH + 'px');
+        }
+        initBodySize();
+
+        $("body").mousemove(function (event) {
+            if (!isMobileOrTablet()) {
+                if (window.innerWidth < 800) {
+                    if (event.pageY <= 240) {
+                        $('#contentOverlay').css('display', 'block');
+                        $('#contentContainer').css('top', '166px');
+                    } else {
+                        $('#contentContainer').css('top', '0');
+                        $('#contentOverlay').css('display', 'none');
+                    }
+                } else {
+                    if (event.pageY <= 240) {
+                        $('#contentOverlay').css('display', 'block');
+                        $('#contentContainer').css('top', '120px');
+                    } else {
+                        $('#contentContainer').css('top', '0');
+                        $('#contentOverlay').css('display', 'none');
+                    }
+                }
+            }
+        });
+
+        $('header')[0].onclick = function () {
+            if (isMobileOrTablet())
+                toggleMenuSmall();
+            else
+                gotoMenu();
+        }
+
+        $(window).resize(function () {
+            initBodySize();
+
+            $('#btnSubmit').css('width', '100%');
+            $('.inputfield input[type="text"], .inputfield textarea').css('width', $('#btnSubmit').css('width'));
+        });
+
+        $('#tblMainClass img').click(function () {
+            $('#tblMainClass img').removeClass('active');
+            $(this).addClass('active')
+        });
+
+        $('#tblOtherClasses img').click(function () {
+            if ($(this)[0].className.indexOf('active') == -1)
+                $(this).addClass('active');
+            else 
+                $(this).removeClass('active');
+        });
+
+        $('.inputfield input[type="text"], .inputfield textarea').css('width', $('#btnSubmit').css('width'));
+    </script>
+</body>
+</html>

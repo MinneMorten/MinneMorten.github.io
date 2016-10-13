@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raid media - Almost Harmless</title>
+    <link rel="icon" type="img/ico" href="favicon.ico">
+    <link href="Content/Site.css" rel="stylesheet" />
+    <style>
+        #pageAssets {
+            background-image: url('Content/Images/mediaAsset.png');
+            background-size: 100%; }
+
+        @media(max-width: 800px) {
+            #pageAssets { background-position-y: 10%; }
+        }
+    </style>
+</head>
+<body>
+    <header onclick="gotoMenu()">
+        <div id="dLogo">
+            <img src="Content/Images/AH_Logo.png" height="100" />
+            <span id="dzfdze">Almost Harmless [AH]</span>
+        </div>
+    </header>
+
+    <section id="menuSmall" class="menu" style="position: absolute;">
+        <div id="mfAbout" class="col6 fullH" onclick="gotoAbout()"><div class="fullH"><p><span>What we do</span></p></div></div><!--
+        --><div id="mfRecruit" class="col6 fullH" onclick="gotoRecruiting()"><div class="fullH"><p><span>Who we're looking for</span></p></div></div><!--
+        --><div id="mfTeam" class="col6 fullH" onclick="gotoTeam()"><div class="fullH"><p><span>Our team</span></p></div></div><!--
+        --><div id="mfMedia" class="col6 fullH active" onclick="gotoMedia()"><div class="fullH"><p><span>Raid media</span></p></div></div><!--
+        --><div id="mfForum" class="col6 fullH" onclick="gotoForum()"><div class="fullH"><p><span>Forum</span></p></div></div><!--
+        --><div id="mfApply" class="col6 fullH" onclick="gotoApplication()"><div class="fullH"><p><span>Apply now</span></p></div></div>
+    </section>
+
+    <section id="contentContainer">
+        <div id="contentOverlay" style="display: none;"></div>
+        <div id="pageAssets" class="col2 pMedia"><div></div></div><!--
+        --><div id="pageContent" class="col2" style="background-color: rgba(253, 127, 35, 1);">
+            <div id="pageContentContainer">
+                <div>
+                    <p class="pageTitle"><span>Raid media</span></p>
+
+                    <div>
+                        <h1>Raid videos &amp; pictures</h1>
+
+                        <p>
+                            During raids we try to capture some footage of our feats.
+                            Not only to show off our skills but also to watch it back and learn from our mistakes.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="mediaItem">
+                            <iframe height="250" src="https://www.youtube.com/embed/jV-s-FPlXUc" frameborder="0" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="mediaItem">
+                            <iframe height="250" src="https://www.youtube.com/embed/tOlnJDdJWSU" frameborder="0" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="mediaItem">
+                            <iframe height="250" src="https://www.youtube.com/embed/pkF3iwsK6Yk" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div style="height: 50px;" class="fillerDiv"></div>
+                </div>
+            </div>   
+        </div>
+    </section>
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/Shared.js"></script>
+    <script>
+        function initBodySize() {
+            var menuFullBlockH = (window.innerHeight - 120);
+            $('#contentContainer > div').css('height', menuFullBlockH + 'px');
+        }
+        initBodySize();
+
+        $("body").mousemove(function (event) {
+            if (!isMobileOrTablet()) {
+                if (window.innerWidth < 800) {
+                    if (event.pageY <= 240) {
+                        $('#contentOverlay').css('display', 'block');
+                        $('#contentContainer').css('top', '166px');
+                    } else {
+                        $('#contentContainer').css('top', '0');
+                        $('#contentOverlay').css('display', 'none');
+                    }
+                } else {
+                    if (event.pageY <= 240) {
+                        $('#contentOverlay').css('display', 'block');
+                        $('#contentContainer').css('top', '120px');
+                    } else {
+                        $('#contentContainer').css('top', '0');
+                        $('#contentOverlay').css('display', 'none');
+                    }
+                }
+            }
+        });
+
+        $('header')[0].onclick = function () {
+            if (isMobileOrTablet())
+                toggleMenuSmall();
+            else
+                gotoMenu();
+        }
+
+        $(window).resize(function () {
+            initBodySize();
+        });
+    </script>
+</body>
+</html>

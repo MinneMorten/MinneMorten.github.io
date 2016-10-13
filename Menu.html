@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Almost Harmless</title>
+    <link rel="icon" type="img/ico" href="favicon.ico">
+    <link href="Content/Site.css" rel="stylesheet" />
+    <style>
+        @media(max-width: 800px) {
+            body {
+            height: auto;
+            width: auto;
+            overflow: initial; }
+        }
+    </style>
+</head>
+<body>
+    <header onclick="gotoMenu()">
+        <div id="dLogo">
+            <img src="Content/Images/AH_Logo.png" height="100" />
+            <span>Almost Harmless [AH]</span>
+        </div>
+    </header>
+    
+    <section id="menuFull" class="menu">
+        <div><!--
+            --><div id="mfAbout" class="col3 fullH" onclick="gotoAbout()"><div class="fullH"><p><span>What we do</span></p></div></div><!--
+                  
+            --><div id="mfRecruit" class="col3 fullH" onclick="gotoRecruiting()"><div class="fullH"><p><span>Who we're looking for</span></p></div></div><!--
+                  
+            --><div id="mfTeam" class="col3 fullH" onclick="gotoTeam()"><div class="fullH"><p><span>Our team</span></p></div></div>
+        </div>
+        <div><!--
+            --><div id="mfMedia" class="col3 fullH" onclick="gotoMedia()"><div class="fullH"><p><span>Raid media</span></p></div></div><!--
+                  
+            --><div id="mfForum" class="col3 fullH" onclick="gotoForum()"><div class="fullH"><p><span>Forum</span></p></div></div><!--
+                  
+            --><div id="mfApply" class="col3 fullH" onclick="gotoApplication()"><div class="fullH"><p><span>Apply now</span></p></div></div>
+        </div>
+    </section>
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/Shared.js"></script>
+    <script>
+        function initMenuFull() {
+            if (window.innerWidth > 800) {
+                var menuFullBlockH = (window.innerHeight - 120) / 2;
+                $('#menuFull > div').css('height', menuFullBlockH + 'px');
+                $('#menuFull .col3').css('height', '100%');
+            } else {
+                $('#menuFull > div').css('height', 'initial');
+                $('#menuFull .col3').css('height', '175px');
+            }
+        }
+        initMenuFull();
+
+        function initBlockBgSize() {
+            var blockW, blockH;
+
+            // About
+            blockW = $('#mfAbout').css('width').substr(0, $('#mfAbout').css('width').length - 2);
+            blockH = $('#mfAbout').css('height').substr(0, $('#mfAbout').css('height').length - 2);
+            if (parseInt(blockH) + 1 >= (blockW / 356) * 450)
+                $('#mfAbout').css('background-size', 'auto 100%');
+            else
+                $('#mfAbout').css('background-size', '');
+            
+            // Recruit
+            blockW = $('#mfRecruit').css('width').substr(0, $('#mfRecruit').css('width').length - 2);
+            blockH = $('#mfRecruit').css('height').substr(0, $('#mfRecruit').css('height').length - 2);
+            if (parseInt(blockH ) + 1 >= (blockW / 668) * 678)
+                $('#mfRecruit').css('background-size', 'auto 100%');
+            else
+                $('#mfRecruit').css('background-size', '');
+
+            // Team
+            blockW = $('#mfTeam').css('width').substr(0, $('#mfTeam').css('width').length - 2);
+            blockH = $('#mfTeam').css('height').substr(0, $('#mfTeam').css('height').length - 2);
+            if (parseInt(blockH) + 1 >= (blockW / 375) * 466)
+                $('#mfTeam').css('background-size', 'auto 100%');
+            else
+                $('#mfTeam').css('background-size', '');
+
+            // Media
+            blockW = $('#mfMedia').css('width').substr(0, $('#mfMedia').css('width').length - 2);
+            blockH = $('#mfMedia').css('height').substr(0, $('#mfMedia').css('height').length - 2);
+            if (parseInt(blockH) + 1 >= (blockW / 581) * 740)
+                $('#mfMedia').css('background-size', 'auto 100%');
+            else
+                $('#mfMedia').css('background-size', '');
+
+            // Forum
+            blockW = $('#mfForum').css('width').substr(0, $('#mfForum').css('width').length - 2);
+            blockH = $('#mfForum').css('height').substr(0, $('#mfForum').css('height').length - 2);
+            if (parseInt(blockH) + 1 >= (blockW / 474) * 680)
+                $('#mfForum').css('background-size', 'auto 100%');
+            else
+                $('#mfForum').css('background-size', '');
+
+            // Apply
+            blockW = $('#mfApply').css('width').substr(0, $('#mfApply').css('width').length - 2);
+            blockH = $('#mfApply').css('height').substr(0, $('#mfApply').css('height').length - 2);
+            if (parseInt(blockH) + 1 >= (blockW / 511) * 560)
+                $('#mfApply').css('background-size', 'auto 100%');
+            else
+                $('#mfApply').css('background-size', '');
+        }
+        initBlockBgSize();
+
+        $(window).resize(function () {
+            initMenuFull();
+            initBlockBgSize();
+        });
+    </script>
+</body>
+</html>

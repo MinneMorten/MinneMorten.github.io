@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our team - Almost Harmless</title>
+    <link rel="icon" type="img/ico" href="favicon.ico">
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        #pageAssets {
+            background-image: url('Content/Images/teamAsset.png');
+            background-size: 110%; }
+
+        @media(max-width: 800px) {
+            #pageAssets { background-position-y: 20%; }
+        }
+    </style>
+</head>
+<body>
+    <header onclick="gotoMenu()">
+        <div id="dLogo">
+            <img src="Content/Images/AH_Logo.png" height="100" />
+            <span id="dzfdze">Almost Harmless [AH]</span>
+        </div>
+    </header>
+
+    <section id="menuSmall" class="menu" style="position: absolute;">
+        <div id="mfAbout" class="col6 fullH" onclick="gotoAbout()"><div class="fullH"><p><span>What we do</span></p></div></div><!--
+        --><div id="mfRecruit" class="col6 fullH" onclick="gotoRecruiting()"><div class="fullH"><p><span>Who we're looking for</span></p></div></div><!--
+        --><div id="mfTeam" class="col6 fullH active" onclick="gotoTeam()"><div class="fullH"><p><span>Our team</span></p></div></div><!--
+        --><div id="mfMedia" class="col6 fullH" onclick="gotoMedia()"><div class="fullH"><p><span>Raid media</span></p></div></div><!--
+        --><div id="mfForum" class="col6 fullH" onclick="gotoForum()"><div class="fullH"><p><span>Forum</span></p></div></div><!--
+        --><div id="mfApply" class="col6 fullH" onclick="gotoApplication()"><div class="fullH"><p><span>Apply now</span></p></div></div>
+    </section>
+
+    <section id="contentContainer">
+        <div id="contentOverlay" style="display: none;"></div>
+        <div id="pageAssets" class="col2 right pTeam"></div><!--
+        --><div id="pageContent" class="col2" style="background-color: rgba(232, 0, 34, 1);">
+            <div id="pageContentContainer">
+                <div>
+                    <p class="pageTitle"><span>Our team</span></p>
+
+                    <div>
+                        <h1>Worldwide family</h1>
+
+                        <p>
+                            Almost Harmless is made up of people from all over the world. Our <b>core memberbase is european</b> however we do have American and Australian members.<br /><br />
+                            With people from all different walks of life and ages you're sure to find a <b>well rounded community</b> for you to fit in.
+                        </p>
+
+                        <p class="quote"><i class="fa fa-quote-left"></i> If you're slackin', your skill'll be lackin' &nbsp; &mdash;Tiru</p>
+
+                        <p>
+                            Our most prominent raid leaders are <b>Oblivious, Tiru</b> and <b> Timi</b>. They have been commanding open and closed raids since the launch of the game.
+                            They have a bunch of expericence and are considered an important part of the server's community.
+                        </p>
+                    </div>
+
+                    <div class="fillerDiv"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/Shared.js"></script>
+    <script>
+        function initBodySize() {
+            var menuFullBlockH = (window.innerHeight - 120);
+            $('#contentContainer > div').css('height', menuFullBlockH + 'px');
+        }
+        initBodySize();
+
+        $("body").mousemove(function (event) {
+            if (!isMobileOrTablet()) {
+                if (window.innerWidth < 800) {
+                    if (event.pageY <= 240) {
+                        $('#contentOverlay').css('display', 'block');
+                        $('#contentContainer').css('top', '166px');
+                    } else {
+                        $('#contentContainer').css('top', '0');
+                        $('#contentOverlay').css('display', 'none');
+                    }
+                } else {
+                    if (event.pageY <= 240) {
+                        $('#contentOverlay').css('display', 'block');
+                        $('#contentContainer').css('top', '120px');
+                    } else {
+                        $('#contentContainer').css('top', '0');
+                        $('#contentOverlay').css('display', 'none');
+                    }
+                }
+            }
+        });
+
+        $('header')[0].onclick = function () {
+            if (isMobileOrTablet())
+                toggleMenuSmall();
+            else
+                gotoMenu();
+        }
+
+        $(window).resize(function () {
+            initBodySize();
+        });
+    </script>
+</body>
+</html>

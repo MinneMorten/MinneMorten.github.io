@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who we're looking for - Almost Harmless</title>
+    <link rel="icon" type="img/ico" href="favicon.ico">
+    <link href="Content/Site.css" rel="stylesheet" />
+    <style>
+        #pageAssets {
+            background-image: url('Content/Images/recruitingAsset.png');
+            background-size: 100% }
+
+        @media(max-width: 800px) {
+            #pageAssets { background-position-y: 20%; }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div id="dLogo">
+            <img src="Content/Images/AH_Logo.png" height="100" />
+            <span id="dzfdze">Almost Harmless [AH]</span>
+        </div>
+    </header>
+
+    <section id="menuSmall" class="menu" style="position: absolute;">
+        <div id="mfAbout" class="col6 fullH" onclick="gotoAbout()"><div class="fullH"><p><span>What we do</span></p></div></div><!--
+        --><div id="mfRecruit" class="col6 fullH active" onclick="gotoRecruiting()"><div class="fullH"><p><span>Who we're looking for</span></p></div></div><!--
+        --><div id="mfTeam" class="col6 fullH" onclick="gotoTeam()"><div class="fullH"><p><span>Our team</span></p></div></div><!--
+        --><div id="mfMedia" class="col6 fullH" onclick="gotoMedia()"><div class="fullH"><p><span>Raid media</span></p></div></div><!--
+        --><div id="mfForum" class="col6 fullH" onclick="gotoForum()"><div class="fullH"><p><span>Forum</span></p></div></div><!--
+        --><div id="mfApply" class="col6 fullH" onclick="gotoApplication()"><div class="fullH"><p><span>Apply now</span></p></div></div>
+    </section>
+
+    <section id="contentContainer">
+        <div id="contentOverlay" style="display: none;"></div>
+        <div id="pageAssets" class="col2 right pRecr"></div><!--
+        --><div id="pageContent" class="col2" style="background-color: rgba(3, 100, 137, 1);">
+            <div id="pageContentContainer">
+                <div>
+                    <p class="pageTitle"><span>Who we're looking for</span></p>
+
+                    <div>
+                        <h1>Dedicated, social players willing to learn.</h1>
+
+                        <p style="margin-bottom: 5px;">
+                            Our <b>rules and regulations</b> are the same you will find in any guild.<br />
+                        </p>
+
+                        <ul style="margin: 0; text-align: left;">
+                            <li>Be active and understand the game</li>
+                            <li>Have the will to improve and learn from your mistakes</li>
+                            <li>Be open for alot of theorycrafting, changing sets/builds</li>
+                            <li>Work for your server and your guild</li>
+                            <li>100% rep (except personal vault)</li>
+                            <li>No Drama</li>
+                        </ul>
+
+                        <p>
+                            Currently we have several classes in high demand. These include <b>Thief, Necro, Mesmer and Warrior</b>.<br />
+                            If you main any of these classes or have a good understanding of their playstyle feel free to apply.
+                        </p>
+
+                        <p>
+                            New members will spend their first few weeks as <b>trial rank</b> to monitor raid attendance and skill level.<br />
+                        </p>
+                    </div>
+
+                    <div class="fillerDiv"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/Shared.js"></script>
+    <script>
+        function initBodySize() {
+            var menuFullBlockH = (window.innerHeight - 120);
+            $('#contentContainer > div').css('height', menuFullBlockH + 'px');
+        }
+        initBodySize();
+
+        $("body").mousemove(function (event) {
+            if (!isMobileOrTablet()) {
+                if (window.innerWidth < 800) {
+                    if (event.pageY <= 240) {
+                        $('#contentOverlay').css('display', 'block');
+                        $('#contentContainer').css('top', '166px');
+                    } else {
+                        $('#contentContainer').css('top', '0');
+                        $('#contentOverlay').css('display', 'none');
+                    }
+                } else {
+                    if (event.pageY <= 240) {
+                        $('#contentOverlay').css('display', 'block');
+                        $('#contentContainer').css('top', '120px');
+                    } else {
+                        $('#contentContainer').css('top', '0');
+                        $('#contentOverlay').css('display', 'none');
+                    }
+                }
+            }
+        });
+
+        $('header')[0].onclick = function () {
+            if (isMobileOrTablet())
+                toggleMenuSmall();
+            else
+                gotoMenu();
+        }
+
+        $(window).resize(function () {
+            initBodySize();
+        });
+    </script>
+</body>
+</html>
